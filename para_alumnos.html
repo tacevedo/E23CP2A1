@@ -15,6 +15,7 @@
 	.fondogris{
 		background-color: #cccccc;
 	}
+
 	body{
 		font-family: verdana, arial, helvetica;
 	}
@@ -50,7 +51,7 @@
 				<label for="camposelector">Selector</label>
 				<input type="Text" name="camposelector" id="camposelector" class="form-control">
 			</div>
-			<input type="button" id="boton" value="Ejecutar Selector" class="btn btn-warning btn-sm">
+			<input type="button" id="boton" value="Ejecutar Selector" onclick="selector()" class="btn btn-warning btn-sm">
 		</form>
 		<div class="row">
 			<div class="col-md-6">
@@ -64,7 +65,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 	<div class="col-md-8">
@@ -113,6 +114,29 @@
 
 <script>
 	// Agregar las instrucciones JS para resolver el ejercicio aquí.
+	function selector() {
+		var val = $("#camposelector").val();
+
+
+		if (val === ""){
+			alert("Debe ingresar un selector jQuery!");
+		}
+		else{
+			try {
+
+			  var result = eval(val).hide().fadeIn(200);
+				$('.historial').append('<p>'+val+'</p>');
+				$('.seleccionados').append('<p>'+ result.length+'</p>');
+
+			} catch (e) {
+				 $("#camposelector").val("");
+			    if (e instanceof SyntaxError) {
+
+			    }
+			}
+		}
+	}
+
 </script>
 
 </body>
