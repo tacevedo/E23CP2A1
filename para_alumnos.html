@@ -124,7 +124,7 @@
 		else{
 			try {
 
-			  var result = eval(val).hide().fadeIn(800);
+			  var result = eval(val + ".fadeOut(800)").fadeIn(800);
 				$('.historial').append('<p>'+val+'</p>');
 				$('.seleccionados').append('<p>'+ result.length+'</p>');
 				$("#camposelector").val("");
