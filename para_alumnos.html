@@ -124,10 +124,10 @@
 		else{
 			try {
 
-			  var result = eval(val).hide().fadeIn(200);
+			  var result = eval(val).hide().fadeIn(800);
 				$('.historial').append('<p>'+val+'</p>');
 				$('.seleccionados').append('<p>'+ result.length+'</p>');
-
+				$("#camposelector").val("");
 			} catch (e) {
 				 $("#camposelector").val("");
 			    if (e instanceof SyntaxError) {
